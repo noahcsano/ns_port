@@ -143,7 +143,7 @@ MagnificPopup.prototype = {
 
 		// We disable fixed positioned lightbox on devices that don't handle it nicely.
 		// If you know a better way of detecting this - let me know.
-		mfp.probablyMobile = (mfp.isAndroid /*|| mfp.isIOS*/ || /(Opera Mini)|Kindle|webOS|BlackBerry|(Opera Mobi)|(Windows Phone)|IEMobile/i.test(navigator.userAgent) );
+		mfp.probablyMobile = (mfp.isAndroid || mfp.isIOS || /(Opera Mini)|Kindle|webOS|BlackBerry|(Opera Mobi)|(Windows Phone)|IEMobile/i.test(navigator.userAgent) );
 		_document = $(document);
 
 		mfp.popupsCache = {};
@@ -732,9 +732,9 @@ MagnificPopup.prototype = {
 			if(  (target !== mfp.content[0] && !$.contains(mfp.content[0], target))  ) {
 				if(closeOnBg) {
 					// last check, if the clicked element is in DOM, (in case it's removed onclick)
-					if( $.contains(document, target) ) {
+					//if( $.contains(document, target) ) {
 						return true;
-					}
+					//}
 				}
 			} else if(closeOnContent) {
 				return true;
