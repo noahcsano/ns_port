@@ -78,7 +78,16 @@ var _mfpOn = function(name, f) {
 	},
 	_mfpTrigger = function(e, data) {
 		mfp.ev.triggerHandler(NS + e, data);
-
+		jQuery('body').css('overflow', 'hidden');
+		jQuery('.mfp-bg').css('overflow', 'scroll');
+		jQuery('.mfp-fade').css('overflow', 'scroll');
+		jQuery('.mfp-ready').css('overflow', 'scroll');
+		
+		
+		if(e == AFTER_CLOSE_EVENT) {
+			jQuery('body').css('overflow', 'scroll');
+		}
+		
 		if(mfp.st.callbacks) {
 			// converts "mfpEventName" to "eventName" callback and triggers it if it's present
 			e = e.charAt(0).toLowerCase() + e.slice(1);
@@ -732,9 +741,9 @@ MagnificPopup.prototype = {
 			if(  (target !== mfp.content[0] && !$.contains(mfp.content[0], target))  ) {
 				if(closeOnBg) {
 					// last check, if the clicked element is in DOM, (in case it's removed onclick)
-					//if( $.contains(document, target) ) {
+					if( $.contains(document, target) ) {
 						return true;
-					//}
+					}
 				}
 			} else if(closeOnContent) {
 				return true;
