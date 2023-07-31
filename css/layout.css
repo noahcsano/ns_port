@@ -728,7 +728,6 @@ footer .st-soc a:hover .icon {
 	.popup-box .desc .category {
 		font-size: 12px;
 	}
-
 }
 
 .popup-box .desc h4 {
@@ -752,7 +751,7 @@ footer .st-soc a:hover .icon {
 }
 
 .popup-box .mfp-close {
-	background: #ffffff;
+	background: hsl(0, 0%, 100%);
 	opacity: 1;
 }
 
