@@ -78,14 +78,14 @@ var _mfpOn = function(name, f) {
 	},
 	_mfpTrigger = function(e, data) {
 		mfp.ev.triggerHandler(NS + e, data);
-		jQuery('body').css('overflow', 'hidden');
+		jQuery('html').css('overflow', 'hidden');
 		jQuery('.mfp-bg').css('overflow', 'scroll');
 		jQuery('.mfp-fade').css('overflow', 'scroll');
 		jQuery('.mfp-ready').css('overflow', 'scroll');
 		
 		
 		if(e == AFTER_CLOSE_EVENT) {
-			jQuery('body').css('overflow', 'scroll');
+			jQuery('html').css('overflow', 'scroll');
 		}
 		
 		if(mfp.st.callbacks) {
