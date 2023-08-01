@@ -77,16 +77,17 @@ var _mfpOn = function(name, f) {
 		return el;
 	},
 	_mfpTrigger = function(e, data) {
-		mfp.ev.triggerHandler(NS + e, data);
 		jQuery('html').css('overflow', 'hidden');
+		if(e == AFTER_CLOSE_EVENT) {
+			jQuery('html').css('overflow', 'scroll');
+		}
+		mfp.ev.triggerHandler(NS + e, data);
 		jQuery('.mfp-bg').css('overflow', 'scroll');
 		jQuery('.mfp-fade').css('overflow', 'scroll');
 		jQuery('.mfp-ready').css('overflow', 'scroll');
 		
 		
-		if(e == AFTER_CLOSE_EVENT) {
-			jQuery('html').css('overflow', 'scroll');
-		}
+		
 		
 		if(mfp.st.callbacks) {
 			// converts "mfpEventName" to "eventName" callback and triggers it if it's present

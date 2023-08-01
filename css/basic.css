@@ -428,6 +428,9 @@ a:hover {
 	
 }
 
+a.mediabtn:hover{
+	border-bottom: solid black;
+}
 /* 6. Buttons */
 a.btn,
 .btn {
