@@ -61,6 +61,7 @@ var _mfpOn = function(name, f) {
 		mfp.ev.on(NS + name + EVENT_NS, f);
 	},
 	_getEl = function(className, appendTo, html, raw) {
+
 		var el = document.createElement('div');
 		el.className = 'mfp-'+className;
 		if(html) {
@@ -156,7 +157,6 @@ MagnificPopup.prototype = {
 	open: function(data) {
 		// Save last focused element
 		mfp._lastFocusedEl = document.activeElement;
-		console.log(mfp._lastFocusedEl);
 		var i;
 
 		if(data.isObj === false) { 
@@ -243,6 +243,7 @@ MagnificPopup.prototype = {
 
 		// Initializing modules
 		var modules = $.magnificPopup.modules;
+
 		for(i = 0; i < modules.length; i++) {
 			var n = modules[i];
 			n = n.charAt(0).toUpperCase() + n.slice(1);
@@ -888,7 +889,7 @@ $.magnificPopup = {
 
 		prependTo: null,
 
-		fixedContentPos: 'auto',
+		fixedContentPos: 'true',
 
 		fixedBgPos: 'auto',
 
