@@ -77,17 +77,10 @@ var _mfpOn = function(name, f) {
 		return el;
 	},
 	_mfpTrigger = function(e, data) {
-		jQuery('html').css('overflow', 'hidden');
-		if(e == AFTER_CLOSE_EVENT) {
-			jQuery('html').css('overflow', 'scroll');
-		}
-		mfp.ev.triggerHandler(NS + e, data);
-		jQuery('.mfp-bg').css('overflow', 'scroll');
+		jQuery('.popup-box').css('overflow', 'scroll');
 		jQuery('.mfp-fade').css('overflow', 'scroll');
-		jQuery('.mfp-ready').css('overflow', 'scroll');
 		
-		
-		
+		mfp.ev.triggerHandler(NS + e, data);
 		
 		if(mfp.st.callbacks) {
 			// converts "mfpEventName" to "eventName" callback and triggers it if it's present
@@ -164,6 +157,8 @@ MagnificPopup.prototype = {
 	 * @param  data [description]
 	 */
 	open: function(data) {
+		jQuery('body').css('overflow', 'hidden');
+
 
 		var i;
 
@@ -414,6 +409,7 @@ MagnificPopup.prototype = {
 	 * Helper for close() function
 	 */
 	_close: function() {
+		jQuery('body').css('overflow', 'scroll');
 		_mfpTrigger(CLOSE_EVENT);
 
 		var classesToRemove = REMOVING_CLASS + ' ' + READY_CLASS + ' ';
