@@ -157,7 +157,7 @@ MagnificPopup.prototype = {
 	 * @param  data [description]
 	 */
 	open: function(data) {
-		jQuery('body').css('overflow', 'hidden');
+		jQuery('*').css('overflow', 'hidden');
 
 
 		var i;
@@ -409,7 +409,7 @@ MagnificPopup.prototype = {
 	 * Helper for close() function
 	 */
 	_close: function() {
-		jQuery('body').css('overflow', 'scroll');
+		jQuery('*').css('overflow', 'scroll');
 		_mfpTrigger(CLOSE_EVENT);
 
 		var classesToRemove = REMOVING_CLASS + ' ' + READY_CLASS + ' ';
