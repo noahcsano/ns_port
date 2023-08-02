@@ -76,10 +76,7 @@ var _mfpOn = function(name, f) {
 		}
 		return el;
 	},
-	_mfpTrigger = function(e, data) {
-		jQuery('.popup-box').css('overflow', 'scroll');
-		jQuery('.mfp-fade').css('overflow', 'scroll');
-		
+	_mfpTrigger = function(e, data) {		
 		mfp.ev.triggerHandler(NS + e, data);
 		
 		if(mfp.st.callbacks) {
@@ -157,9 +154,9 @@ MagnificPopup.prototype = {
 	 * @param  data [description]
 	 */
 	open: function(data) {
-		jQuery('*').css('overflow', 'hidden');
-
-
+		// Save last focused element
+		mfp._lastFocusedEl = document.activeElement;
+		console.log(mfp._lastFocusedEl);
 		var i;
 
 		if(data.isObj === false) { 
@@ -360,8 +357,7 @@ MagnificPopup.prototype = {
 		// add everything to DOM
 		mfp.bgOverlay.add(mfp.wrap).prependTo( mfp.st.prependTo || $(document.body) );
 
-		// Save last focused element
-		mfp._lastFocusedEl = document.activeElement;
+		
 		
 		// Wait for next cycle to allow CSS transition
 		setTimeout(function() {
@@ -409,7 +405,6 @@ MagnificPopup.prototype = {
 	 * Helper for close() function
 	 */
 	_close: function() {
-		jQuery('*').css('overflow', 'scroll');
 		_mfpTrigger(CLOSE_EVENT);
 
 		var classesToRemove = REMOVING_CLASS + ' ' + READY_CLASS + ' ';

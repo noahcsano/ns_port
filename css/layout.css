@@ -800,6 +800,7 @@ footer .st-soc a:hover .icon {
 	opacity: 0;
 }
 
+
 /* content at start */
 .mfp-fade.mfp-wrap .mfp-content {
 	opacity: 0;
@@ -818,4 +819,3 @@ footer .st-soc a:hover .icon {
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
 	opacity: 0;
 }
-
