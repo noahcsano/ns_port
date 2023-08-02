@@ -819,3 +819,7 @@ footer .st-soc a:hover .icon {
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
 	opacity: 0;
 }
+
+body.noscroll {
+	overflow-y: hidden!important;
+  }

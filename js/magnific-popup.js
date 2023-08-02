@@ -155,6 +155,7 @@ MagnificPopup.prototype = {
 	 * @param  data [description]
 	 */
 	open: function(data) {
+		jQuery('body').addClass('noscroll');
 		// Save last focused element
 		mfp._lastFocusedEl = document.activeElement;
 		var i;
@@ -389,7 +390,7 @@ MagnificPopup.prototype = {
 	close: function() {
 		if(!mfp.isOpen) return;
 		_mfpTrigger(BEFORE_CLOSE_EVENT);
-
+		jQuery('body').removeClass('noscroll');
 		mfp.isOpen = false;
 		// for CSS3 animation
 		if(mfp.st.removalDelay && !mfp.isLowIE && mfp.supportsTransition )  {
@@ -831,6 +832,7 @@ $.magnificPopup = {
 	open: function(options, index) {
 		_checkInstance();
 
+
 		if(!options) {
 			options = {};
 		} else {
@@ -891,7 +893,7 @@ $.magnificPopup = {
 
 		fixedContentPos: 'true',
 
-		fixedBgPos: 'true',
+		fixedBgPos: 'auto',
 
 		overflowY: 'hidden',
 
