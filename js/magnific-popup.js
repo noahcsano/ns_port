@@ -893,7 +893,7 @@ $.magnificPopup = {
 
 		fixedContentPos: 'true',
 
-		fixedBgPos: 'auto',
+		fixedBgPos: 'true',
 
 		overflowY: 'hidden',
 
