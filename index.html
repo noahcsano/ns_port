@@ -97,11 +97,11 @@
 						<h1 class="animated">My name is Noah Sano, <br />D1 Gymnast and an aspiring Data Scientist<br /> at the University of California, Berkeley.</h1>
 						<p class="animated">
 							My passion lies in leveraging big data and applying data engineering and analytics techniques to solve complex problems, 
-							 develop innovative platforms, and derive insights to address global challenges. <br> My goal is to merge my dedication as a gymnast with my enthusiasm 
+							 develop innovative platforms, and derive insights to address industry challenges. <br> My goal is to merge my dedication as a gymnast with my enthusiasm 
 							 for data science, <br> contributing to cutting-edge solutions that make a meaningful impact.		</p>
 					</div>
 					<div class="bts">
-						<a href="resume117.pdf" target = "_blank" class="btn extra animated">Download Resume</a>
+						<a href="Resume_data1216 copy.pdf" target = "_blank" class="btn extra animated">Download Resume</a>
 					</div>
 				</div>
 			</div>
@@ -187,6 +187,147 @@
 	
 					</div>
 					<div class="row box-items">
+						<!-- Adding Flight Predictions -->
+						<div class="col col-m-12 col-t-6 col-d-6 box-item f-ui">
+							<div class="item animated">
+								<div class="desc">
+									<div class="image">
+										<a href="#popup-8" class="has-popup"><img src="images/works/flight.jpeg" alt="" /></a>
+									</div>
+									<div class="category">Data Science</div>
+									<div class="name">
+										<a href="#popup-8" class="has-popup">Flight Status Data Analysis</a>
+									</div>
+								</div>
+							</div>
+							<div id="popup-8" class="popup-box mfp-fade mfp-hide">
+								<div class="content">
+									<div class="image">
+										<img src="images/works/flight.jpeg" alt="">
+									</div>
+									<div class="desc">
+										<div class="category">Data Science</div>
+										<h4>Flight Status Data Analysis</h4>
+										<p>
+											<b>Objective:</b> 
+											Addressing flight cancellations in America with predictive models.
+											Wide-ranging impact on various stakeholders due to cancellations.
+											Emphasis on COVID-19's influence, considering uncertainties and global travel patterns.
+											<br>
+											<br>
+											<b>Dataset:</b>  
+											Kaggle Flight Status dataset (2020-2022) merged with WHO COVID-19 dataset.
+											Top 3 US airlines selected: Southwest, SkyWest, Delta
+											<br>
+											<br>
+											<b>Data Preprocessing:</b>  <br>
+											Seaborn EDA for robust feature engineering/selection such as heatmaps to mitigate multicollinearity.
+											Handled null values by replacing with mean (numerical) and mode (categorical).
+											Extracted information from date/time columns for meaningful patterns.
+											<br><br>
+											<b>Text Representation:</b>  <br>
+											Introduced features like Weekend (binary), Time of the Day (categorized).
+											One-hot encoding of categorical variables resulted in 42 features.
+											<br><br>
+											<b>Machine Learning Models:</b>  <br>
+											Logistic Regression: Similar accuracy to baseline, low precision. <br>
+											Decision Tree Classifier (CART): Accuracy 97.77%, high precision (99.6%).<br>
+											Random Forest Classifier: Accuracy 97.76%.<br>
+											Linear Discriminant Analysis (LDA): Accuracy 97.77%, TPR 0.66%, precision 76.22%.<br>
+											Gradient Boosting: Accuracy 97.76%, high ROC-AUC score (0.9753).<br>
+											<br>
+											<b>Model Evaluation:</b>  <br>
+											ROC-AUC considered crucial due to class imbalance.
+											Random Forest and Gradient Boosting performed well in ROC-AUC.
+											<br>
+											Evaluated model performance variability using bootstrap.
+											CIs for metrics (accuracy, TPR, FPR, precision) did not include zero, indicating statistical significance.
+											<br><br>
+											<b style="font-weight: 500;">Language</b>: Python
+											<br>
+											<b style="font-weight: 500;">Softwares/Libraries</b>: Pandas, Numpy, Scikit-learn, Seaborn, Matplotlib, Statsmodel, Jupyter Notebook
+
+										</p>
+										<a href="https://github.com/noahcsano/Flight-Status-Data-Analysis/blob/main/IEOR_project_11.ipynb" class="btn" target="_blank">View on Github</a>
+									</div>
+								</div>
+							</div>
+						</div> 
+						<!-- Ending Flight Prediction -->
+						<!-- Adding NLP Stack Exchange-->
+						<div class="col col-m-12 col-t-6 col-d-6 box-item f-ui">
+							<div class="item animated">
+								<div class="desc">
+									<div class="image">
+										<a href="#popup-9" class="has-popup"><img src="images/works/se.webp" alt="" /></a>
+									</div>
+									<div class="category">Data Science</div>
+									<div class="name">
+										<a href="#popup-9" class="has-popup">NLP for Stack Exchange Text Analysis</a>
+									</div>
+								</div>
+							</div>
+							<div id="popup-9" class="popup-box mfp-fade mfp-hide">
+								<div class="content">
+									<div class="image">
+										<img src="images/works/se.webp" alt="">
+									</div>
+									<div class="desc">
+										<div class="category">Data Science</div>
+										<h4>NLP for Stack Exchange Text Analysis</h4>
+										<p>
+											<b>Objective:</b> Predicting the "usefulness" of Stack Exchange questions using machine learning algorithms. (Useful = at least 2 endorsements)
+											<br>
+											<br>
+											<b>Dataset:</b>  Approximately 20,000 HTML-format questions provided in a CSV file.
+											<br>
+											<br>
+											<b>Data Preprocessing:</b>  <br>
+											Utilized pandas and numpy for data manipulation. <br>
+											Employed Beautiful Soup to parse HTML into plain text.
+											Developed custom string manipulation functions for cleaning data (removing punctuation, lowercasing, stop word removal, and stemming).
+											<br><br>
+											<b>Text Representation:</b>  <br>
+											Used Natural Language Toolkit (NLTK) to tokenize each question.
+											Created a matrix representing word frequency for each question. 
+											<br><br>
+											<b>Exploratory Data Analysis (EDA):</b>  <br>
+
+											Identified significant words for model building.
+											Generated plots to analyze word frequency and question length.
+											Examined characteristics of useful and non-useful questions. 
+											<br><br>
+											<b>Machine Learning Models:</b>  <br>
+
+											- Logistic Regression <br>
+											- Decision Tree Classifier with Grid Search Cross Validation<br>
+											- Random Forest w/ 10-fold Cross Validation(tuning "max_features" parameter) <br> 
+											<br>
+											<b>Model Evaluation:</b>  <br>
+
+											Achieved an accuracy of 70% with a set minimum threshold of 60%. 
+											ROC-AUC metric to evaluate model performance and True Positive Rate(TPR) and False Positive Rate(FPR) tradeoff. <br>
+											Performed botstrap analysis to build 95% confidence interval to capture variability.
+
+											<br>
+											<br>
+											<b>Takeaway:</b>  <br>
+
+											Gained experience in handling unstructured data.
+											Demonstrated meaningful data engineering for effective data science techniques.
+											 
+											<br><br>
+											<b style="font-weight: 500;">Language</b>: Python
+											<br>
+											<b style="font-weight: 500;">Softwares/Libraries</b>: Pandas, Numpy, Scikit-learn, BeautifulSoup, NLTK, Matplotlib, Statsmodel, Jupyter Notebook
+
+										</p>
+										<a href="https://github.com/noahcsano/Stack-Exchange-NLP/blob/main/HW5_Student%20copy.ipynb" class="btn" target="_blank">View on Github</a>
+									</div>
+								</div>
+							</div>
+						</div> 
+						<!-- Ending NLP Stack Exchange -->
 						<div class="col col-m-12 col-t-6 col-d-6 box-item f-mockups">
 							<div class="item animated">
 								<div class="desc">
